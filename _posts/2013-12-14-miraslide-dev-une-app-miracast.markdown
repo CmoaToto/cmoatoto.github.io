@@ -40,21 +40,24 @@ Assez de liens, passons au développement !
 MiraSlide : Une application de Présentations
 ============================================
 
-![MiraSlide](/assets/images/miraslide_logo.png "MiraSlide logo")
+{% img center /assets/images/miraslide_logo.png 300  MiraSlide logo %}
 
-Code source du projet MiraSlide
+{: .center }
+[Code source du projet MiraSlide](https://github.com/CmoaToto/MiraSlide)
 
-Page Google Play de l'application
+{: .center }
+[Page Google Play de l'application](https://play.google.com/store/apps/details?id=fr.cmoatoto.miraslide)
+
 
 Le but de cette application est de répondre à un besoin simple : les conférenciers sont soit encombrés, soit esclaves du matériel prêté, soit les deux. Ici, le Wireless Display associé à un appareil plus léger qu'un ordinateur et pouvant donc être utilisé en télécommande nous permettrait de diffuser et commander les slides depuis son téléphone/tablette, en ayant en plus dans la main les informations supplémentaires que nous apporte un ordinateur (chronomètre, notes...).
 
 Voici donc le but très simple de MiraSlide :
 
-Vous sélectionnez votre fichier de présentation, vous connectez votre appareil à un écran récepteur Wireless Display puis vous lancez la présentation.
+1. Vous sélectionnez votre fichier de présentation, vous connectez votre appareil à un écran récepteur Wireless Display puis vous lancez la présentation.
 
-Sur l'écran récepteur, la première page de votre présentation s'affiche.
+2. Sur l'écran récepteur, la première page de votre présentation s'affiche.
 
-L'écran de votre appareil vous propose alors un chronomètre, ainsi qu'une télécommande affichant le slide courant, les notes éventuelles, et des boutons précédent / suivant.
+3. L'écran de votre appareil vous propose alors un chronomètre, ainsi qu'une télécommande affichant le slide courant, les notes éventuelles, et des boutons précédent / suivant.
 
 MiraSlide presentation
 
