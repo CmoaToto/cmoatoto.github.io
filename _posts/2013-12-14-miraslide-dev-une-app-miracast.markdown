@@ -25,7 +25,7 @@ Avant tout, il va falloir se familiariser avec certaines connaissances.
 <a name="prerequis" />
 
 Prérequis
-=========
+---------
 
 **Android :** Si vous débutez sur le développement Android, je vous conseille très fortement de lire tous les guides de démarrage sur [le site des développeurs Android](http://developer.android.com/index.html).
 
@@ -38,7 +38,7 @@ Assez de liens, passons au développement !
 <a name="intro-miraslide" />
 
 MiraSlide : Une application de Présentations
-============================================
+--------------------------------------------
 
 {% img center /assets/images/miraslide_logo.png 300  MiraSlide logo %}
 
@@ -59,92 +59,79 @@ Voici donc le but très simple de MiraSlide :
 
 3. L'écran de votre appareil vous propose alors un chronomètre, ainsi qu'une télécommande affichant le slide courant, les notes éventuelles, et des boutons précédent / suivant.
 
-MiraSlide presentation
+{% img center /assets/images/miraslide_presentation.png 600  MiraSlide presentation %}
 
 Maintenant que nous avons une idée plus précise de l'application que nous voulons développer, nous allons nous pencher sur les APIs.
 
+<a name="widi-dans-android" />
+
 Utiliser le WiDi dans Android
+-----------------------------
 
 Pour ceux qui n'auraient pas bien lu les prérequis, le WiDi (et plus largement la notion d'écran externe) apparaît dans le framework d'Android avec l'API 17 (Android 4.2.2). Deux éléments essentiels sont alors créés :
 
-Le Display Manager va être l'interface permettant à l'application de connaitre les écrans disponibles et d’interagir avec.
-Une Presentation est une vue similaire à une Dialog (dont elle est étendue) mais projetée sur un Display donné. Une des notions les plus importantes à comprendre du fait que la Presentation est une extension d'une Dialog est qu'elle est forcément attachée à une Activity. Ainsi, si cette dernière est mise en pause (si elle n'est plus visible à l'écran, en gros), alors la Presentation n’apparaîtra plus sur le Display associé (et le mode d'écran clone par défaut s'activera). Si vous retournez ensuite à votre Activity, la Presentation reviendra s'afficher sur le Display.
+- Le **[Display Manager](http://developer.android.com/reference/android/hardware/display/DisplayManager.html)** va être l'interface permettant à l'application de connaitre les écrans disponibles et d’interagir avec.
+- Une **[Presentation](http://developer.android.com/reference/android/app/Presentation.html)** est une vue similaire à une **[Dialog](http://developer.android.com/reference/android/app/Dialog.html)** (dont elle est étendue) mais projetée sur un **[Display](http://developer.android.com/reference/android/view/Display.html)** donné. Une des notions les plus importantes à comprendre du fait que la **Presentation** est une extension d'une **Dialog** est qu'elle est forcément attachée à une **[Activity](http://developer.android.com/reference/android/app/Activity.html)**. Ainsi, si cette dernière est mise en pause (si elle n'est plus visible à l'écran, en gros), alors la **Presentation** n’apparaîtra plus sur le **Display** associé (et le mode d'écran clone par défaut s'activera). Si vous retournez ensuite à votre **Activity**, la **Presentation** reviendra s'afficher sur le **Display**.
 L'implémentation est finalement très simple :
 
+1. [Récupération du Display][31]
+2. [La création et l'affichage de la Presentation][32]
+3. [Ajout de listeners][33]
+
+    [31]: #recuperation-display
+    [32]: #creation-affichage
+    [33]: #ajout-listeners
+
+<a name="recuperation-display" />
+
 La récupération du Display
-La création et l'affichage de la Presentation
-Ajout de listeners
-1. La récupération du Display
-Elle peut se faire de deux façons. Ou bien en utilisant le MediaRouter introduit avec l'API 16 :
+==========================
 
-01
+Elle peut se faire de deux façons. Ou bien en utilisant le **[MediaRouter](http://developer.android.com/reference/android/media/MediaRouter.html)** introduit avec l'API 16 :
+
+{% highlight java %}
 MediaRouter mediaRouter = (MediaRouter) context.getSystemService(Context.MEDIA_ROUTER_SERVICE);
-02
 MediaRouter.RouteInfo route = mediaRouter.getSelectedRoute();
-03
- 
-04
-if (route != null) {
-05
-    Display presentationDisplay = route.getPresentationDisplay();
-06
- 
-07
-    if (presentationDisplay != null) {
-08
- 
-09
-        // Your code...
-10
- 
-11
-    }
-12
-}
-Ou bien en utilisant le Le Display Manager :
 
-01
-DisplayManager displayManager = (DisplayManager) mActivity.getSystemService(Context.DISPLAY_SERVICE);
-02
+if (route != null) {
+    Display presentationDisplay = route.getPresentationDisplay();
+
+    if (presentationDisplay != null) {
  
-03
-// Selecting DISPLAY_CATEGORY_PRESENTATION prevents the DisplayManager from returning inapropriate Display,
-04
-// like the own device display.
-05
-Display[] displays = displayManager.getDisplays(DisplayManager.DISPLAY_CATEGORY_PRESENTATION);
-06
- 
-07
-if (displays.length == 0) {
-08
- 
-09
-    // If there is no external display connected, we launch the Display settings. We could launch
-10
-    // the Wifi display settings with ACTION_WIFI_DISPLAY_SETTINGS but it is a hidden static value
-11
-    // because there may be not such settings (if the device does not have Wireless display but
-12
-    // have API >= 17).
-13
-    startActivity(new Intent(Settings.ACTION_DISPLAY_SETTINGS));
-14
- 
-15
-} else {
-16
- 
-17
-    // We should show a DialogBox to let the user select the display if there is more than one but
-18
-    // for this example we only choose the first one
-19
-    Display display = displays[0];
-20
- 
-21
+        // Your code...
+
+    }
 }
+{% endhighlight %}
+
+Ou bien en utilisant le **[Display Manager](http://developer.android.com/reference/android/hardware/display/DisplayManager.html)** :
+
+{% highlight java %}
+DisplayManager displayManager = (DisplayManager) mActivity.getSystemService(Context.DISPLAY_SERVICE);
+
+// Selecting DISPLAY_CATEGORY_PRESENTATION prevents the DisplayManager from returning inapropriate Display,
+// like the own device display.
+Display[] displays = displayManager.getDisplays(DisplayManager.DISPLAY_CATEGORY_PRESENTATION);
+
+if (displays.length == 0) {
+
+    // If there is no external display connected, we launch the Display settings. We could launch
+    // the Wifi display settings with ACTION_WIFI_DISPLAY_SETTINGS but it is a hidden static value
+    // because there may be not such settings (if the device does not have Wireless display but
+    // have API >= 17).
+    startActivity(new Intent(Settings.ACTION_DISPLAY_SETTINGS));
+
+} else {
+
+    // We should show a DialogBox to let the user select the display if there is more than one but
+    // for this example we only choose the first one
+    Display display = displays[0];
+
+}
+
+{% endhighlight %}
+
+
 2. La création et l'affichage de la Presentation
 Ici non plus, rien de très compliqué. La Presentation n'a besoin que de l'Activity parente et du Display où être affiché pour être créé. Ensuite, la méthode show() affiche la Presentation sur le Display. Comme une Dialog, la Presentation comprend une méthode setContentView() grâce à laquelle vous pourrez définir la vue à afficher :
 
