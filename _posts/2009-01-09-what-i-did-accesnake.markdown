@@ -4,7 +4,7 @@ title:  "AcceSnake : Learn Symbian OS through a great Snake game development"
 date:   2009-01-09 12:00:00
 tags: symbian python application game english whatidid
 ---
-What I did from 2008 to 2009? I was bored so I learned **Pytnon** and **Symbian OS** development and created a popular Snake game using the accelerometer.
+What I did from 2008 to 2009? I was bored so I learned **Python** and **Symbian OS** development and created a popular Snake game using the accelerometer.
 
 - [Why?][1]
 - [AcceSnake : A Snake Game using the accelerometer][2]
@@ -21,7 +21,7 @@ What I did from 2008 to 2009? I was bored so I learned **Pytnon** and **Symbian 
 Why?
 ----
 
-During summer 2008, I worked 1 month in England (I'm French), menthoring teenagers during their English class trip. Main of my work was to wait during their English lessons. At that time, I didn't have a computer whith me, but a great **Nokia N95 8Go** under **Symbian v5**. This awesome smartphone had no touchscreen but **a nice T9 keyboard**, plus many navigation buttons (11 keys, with the D-pad). It's **2,8 inches screen** (240x320px) was pretty big at this time. And the great thing was all the new sensors we were not familiar with. GPS, 5MP Camera, TvOutput, a fast 332MHz Dual CPU and it's proper 3D Graphics HW Accelerator GPU! But the awesomeness was **the accelerometer**. It was so brand new that there was no released driver for... and so no game, no application, nothing using it. But the specs said it was there!
+During summer 2008, I worked 1 month in England (I'm French), mentoring teenagers during their English class trip. Main of my work was to wait during their English lessons. At that time, I didn't have a computer with me, but a great **Nokia N95 8Go** under **Symbian v5**. This awesome smartphone had no touchscreen but **a nice T9 keyboard**, plus many navigation buttons (11 keys, with the D-pad). It's **2,8 inches screen** (240x320px) was pretty big at this time. And the great thing was all the new sensors we were not familiar with. GPS, 5MP Camera, TvOutput, a fast 332MHz Dual CPU and it's proper 3D Graphics HW Accelerator GPU! But the awesomeness was **the accelerometer**. It was so brand new that there was no released driver for... and so no game, no application, nothing using it. But the specs said it was there!
 
 {% img center /assets/images/accesnake_n958gb.jpg 400 N95 8GB %}
 
@@ -48,7 +48,7 @@ AcceSnake : A Snake Game using the accelerometer
 >
 > Developed in Python, this game has been entirely coded with a text-editor, on a N95 8Go. I never used a computer to make it.
 >
-> For the first time in a snake game, you can move in any direction, slow down, and accelerate just by moving the phone. You can cross your tail but don't touch the wall or you will loose a life.
+> For the first time in a snake game, you can move in any direction, slow down, and accelerate just by moving the phone. You can cross your tail but don't touch the wall or you will lose a life.
 >
 > If you don't have an accelerometer, or if you prefer to use the keyboard, just choose the right option.
 
