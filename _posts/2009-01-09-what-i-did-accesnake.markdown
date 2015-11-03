@@ -23,11 +23,11 @@ Why?
 
 During summer 2008, I worked 1 month in England (I'm French), mentoring teenagers during their English class trip. Main of my work was to wait during their English lessons. At that time, I didn't have a computer with me, but a great **Nokia N95 8Go** under **Symbian v5**. This awesome smartphone had no touchscreen but **a nice T9 keyboard**, plus many navigation buttons (11 keys, with the D-pad). It's **2,8 inches screen** (240x320px) was pretty big at this time. And the great thing was all the new sensors we were not familiar with. GPS, 5MP Camera, TvOutput, a fast 332MHz Dual CPU and it's proper 3D Graphics HW Accelerator GPU! But the awesomeness was **the accelerometer**. It was so brand new that there was no released driver for... and so no game, no application, nothing using it. But the specs said it was there!
 
-{% img center /assets/images/accesnake_n958gb.jpg 400 N95 8GB %}
+<img src="assets/images/accesnake_n958gb.jpg" alt="N95 8GB" style="width: 400px; margin-left: auto; margin-right: auto"/>
 
 So there was this game, **3D snake**, a great snake game reborn. I spent all my time on it and finished it once, twice then was bored. I was even more bored because the game was great but it didn't use 2 things I wanted in it: an accelerometer control, and a 360° liberty of move.
 
-{% img center /assets/images/accesnake_snake3d.jpg 200 Snake 3D %}
+<img src="assets/images/accesnake_snake3d.jpg" alt="Snake 3D" style="width: 200px; margin-left: auto; margin-right: auto"/>
 
 Then what to do when you want something you don't have? You make it! But *I didn't have computer with me*, and no data most of the time. So I texted my brother who know well computer science and asked what can I do. *"Learn Python, and find an interpreter."*. So I did. I found almost immediately an awesome small community of Symbian developers, **an official (!!!) python interpreter and API made by Nokia**, and also, and that's the great part, **a leaked accelerometer driver** with it's API made by the community. Then all I needed was a notepad (easy part, of course).
 
@@ -36,7 +36,7 @@ Then what to do when you want something you don't have? You make it! But *I didn
 AcceSnake : A Snake Game using the accelerometer
 ------------------------------------------------
 
-{% img center /assets/images/accesnake_logo.png 200 AcceSnake logo %}
+<img src="assets/images/accesnake_logo.jpg" alt="AcceSnake logo" style="width: 200px; margin-left: auto; margin-right: auto"/>
 
 {: .center }
 [Source code and download page](https://code.google.com/p/accesnake/downloads/list)
@@ -69,7 +69,7 @@ Free Open Source game available on [code.google](https://code.google.com/p/acces
 - Managing the distribution and advertising.
 - Internationalization (assisted by community for regionalization).
 
-{% img center /assets/images/accesnake_screenshot.png 240 AcceSnake logo %}
+<img src="assets/images/accesnake_screenshot.jpg" alt="AcceSnake logo" style="width: 240px; margin-left: auto; margin-right: auto"/>
 
 <a name="end-3" />
 
