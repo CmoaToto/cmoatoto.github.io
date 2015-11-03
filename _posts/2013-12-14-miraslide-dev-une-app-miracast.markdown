@@ -40,7 +40,7 @@ Assez de liens, passons au développement !
 MiraSlide : Une application de Présentations
 --------------------------------------------
 
-<img src="assets/images/miraslide_logo.png" alt="MiraSlide logo" style="width: 300px; margin-left: auto; margin-right: auto"/>
+<img src="{{ site.url }}/assets/images/miraslide_logo.png" alt="MiraSlide logo" style="width: 300px; margin-left: auto; margin-right: auto"/>
 
 {: .center }
 [Code source du projet MiraSlide](https://github.com/CmoaToto/MiraSlide)
@@ -59,7 +59,7 @@ Voici donc le but très simple de MiraSlide :
 
 3. L'écran de votre appareil vous propose alors un chronomètre, ainsi qu'une télécommande affichant le slide courant, les notes éventuelles, et des boutons précédent / suivant.
 
-<img src="assets/images/miraslide_presentation.png" alt="MiraSlide presentation" style="width: 600px; margin-left: auto; margin-right: auto"/>
+<img src="{{ site.url }}/assets/images/miraslide_presentation.png" alt="MiraSlide presentation" style="width: 600px; margin-left: auto; margin-right: auto"/>
 
 Maintenant que nous avons une idée plus précise de l'application que nous voulons développer, nous allons nous pencher sur les APIs.
 
@@ -322,7 +322,7 @@ if (displays.length == 0) {
 
 {% endhighlight %}
 
-<img src="assets/images/miraslide_connect.png" alt="Connecting a Wireless Display on Android" style="width: 800px; margin-left: auto; margin-right: auto"/>
+<img src="{{ site.url }}/assets/images/miraslide_connect.png" alt="Connecting a Wireless Display on Android" style="width: 800px; margin-left: auto; margin-right: auto"/>
 
 - Si un seul **Display** est connecté, ou si un **Display** a déjà été sélectionné, le bouton affiche ***Display selected NOM_DU_DISPLAY***. Si l'utilisateur clique dessus, le même code que lors du cas où plusieurs **Display**s sont connectés est executé.
 
