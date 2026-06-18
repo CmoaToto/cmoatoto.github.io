@@ -1,23 +1,257 @@
 ---
 layout: default
 ---
+{% assign accesnake_post = site.posts | where_exp: "p", "p.title contains 'AcceSnake'" | first %}
 
-<div class="home">
+<!-- ====================== HERO ====================== -->
+<section class="hero">
+  <div class="wrapper">
+    <div class="hero-grid">
+      <div class="avatar">
+        <img src="https://github.com/{{ site.github_username }}.png" alt="Portrait of {{ site.author }}" width="168" height="168">
+      </div>
 
-  <h1 class="page-heading">Posts</h1>
+      <div class="hero-text">
+        <span class="status-pill"><span class="ping"></span> Shipping Android at Qonto · open to good ideas</span>
+        <h1 class="hero-name">{{ site.author }}</h1>
+        <p class="hero-role">Android Staff Engineer <span class="accent">@ Qonto</span></p>
+        <p class="hero-tagline">
+          I build the banking app European SMEs &amp; freelancers rely on every day. These
+          days I obsess over Jetpack Compose and bringing AI into the Android team. For
+          over a decade I also helped grow the Paris Android community.
+        </p>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <div class="hero-meta">
+          <span>📍 {{ site.location }}</span>
+          <span>📱 10+ years of Android</span>
+          <span>🤝 PAUG · Droidcon · AndroidMakers</span>
+        </div>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#work">See my work</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+            Get in touch
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+<!-- ====================== NOW ====================== -->
+<section class="section" id="now">
+  <div class="wrapper">
+    <div class="section-head reveal">
+      <span class="eyebrow">Now</span>
+      <h2>What I'm into right now</h2>
+    </div>
 
-</div>
+    <div class="now-grid">
+      <div class="now-card reveal">
+        <div class="now-icon">🤖</div>
+        <h3>AI in the Android team</h3>
+        <p>Bringing AI into how Qonto's Android engineers work: agents, tooling and workflows that make the whole team faster and ship with more confidence.</p>
+      </div>
+      <div class="now-card reveal">
+        <div class="now-icon">🧩</div>
+        <h3>The last mile to Compose</h3>
+        <p>Driving the migration of Qonto's 100+ remaining XML screens to Jetpack Compose, modernising a large, real-world codebase without slowing delivery.</p>
+        <span class="soon">✍️ Article coming soon</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== EXPERIENCE ====================== -->
+<section class="section" id="work">
+  <div class="wrapper">
+    <div class="section-head reveal">
+      <span class="eyebrow">Experience</span>
+      <h2>A decade building Android</h2>
+      <p>From accelerometer games on early phones to a banking app trusted across Europe.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <span class="timeline-when">Apr 2018 – Present</span>
+        <h3 class="timeline-role">Android Staff Engineer <span class="at">· Qonto</span></h3>
+        <p>Building the banking experience for European SMEs and freelancers. I shape Android architecture, lead the move to Jetpack Compose, and bring AI into the team's day-to-day engineering.</p>
+        <div class="timeline-tags">
+          <span class="tag">Kotlin</span><span class="tag">Jetpack Compose</span><span class="tag">Coroutines</span><span class="tag">Architecture</span><span class="tag">AI tooling</span>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <span class="timeline-when">2013 – 2018</span>
+        <h3 class="timeline-role">Android Developer &amp; Scrum Master <span class="at">· Genymobile</span></h3>
+        <p>Built Android apps for major clients and led Scrum &amp; Kanban teams. Deep dives into the Android platform, AOSP and device-level quirks, plus the agile craft of helping teams ship.</p>
+        <div class="timeline-tags">
+          <span class="tag">Android</span><span class="tag">AOSP</span><span class="tag">Scrum</span><span class="tag">Kanban</span>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <span class="timeline-when">2013 – 2024</span>
+        <h3 class="timeline-role">Community Organizer <span class="at">· Paris Android scene</span></h3>
+        <p>Co-organized the Paris Android User Group, Droidcon Paris and AndroidMakers for over a decade, helping grow one of Europe's most active Android communities.</p>
+        <div class="timeline-tags">
+          <span class="tag">PAUG</span><span class="tag">Droidcon Paris</span><span class="tag">AndroidMakers</span>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <span class="timeline-when">Education</span>
+        <h3 class="timeline-role">Diplôme d'Ingénieur, Software Engineering <span class="at">· ISEN</span></h3>
+        <p>Engineering degree from the Institut Supérieur d'Électronique et du Numérique, where the first side projects (and the AcceSnake obsession) began.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== PROJECTS ====================== -->
+<section class="section" id="projects">
+  <div class="wrapper">
+    <div class="section-head reveal">
+      <span class="eyebrow">Projects</span>
+      <h2>Things I've built</h2>
+      <p>Side projects and apps across phones, presentations and playful weather.</p>
+    </div>
+
+    <div class="project-grid">
+
+      <article class="project-card reveal">
+        <div class="project-media project-media--emoji" aria-hidden="true">🐸</div>
+        <div class="project-body">
+          <div class="project-head"><h3>Froggy Weather</h3><span class="year">2025</span></div>
+          <p>A fun, educational weather app for children and families. Playful, safe, and privacy-first by design.</p>
+          <div class="project-tags"><span class="tag">Android</span><span class="tag">Kotlin</span><span class="tag">Kids</span></div>
+          <div class="project-links">
+            <a href="{{ "/froggy-weather-privacy/" | prepend: site.baseurl }}">Privacy policy →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-media">
+          <img src="{{ "/assets/images/miraslide_presentation.png" | prepend: site.baseurl }}" alt="MiraSlide presentation screenshot" loading="lazy">
+        </div>
+        <div class="project-body">
+          <div class="project-head"><h3>MiraSlide</h3><span class="year">2013</span></div>
+          <p>Show your slides on an external display over Miracast/WiDi while you control the deck privately from your phone.</p>
+          <div class="project-tags"><span class="tag">Android</span><span class="tag">Miracast</span><span class="tag">Java</span></div>
+          <div class="project-links">
+            <a href="https://github.com/{{ site.github_username }}/MiraSlide" target="_blank" rel="noopener">GitHub →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-media">
+          <img src="{{ "/assets/images/accesnake_screenshot.png" | prepend: site.baseurl }}" alt="AcceSnake screenshot" loading="lazy">
+        </div>
+        <div class="project-body">
+          <div class="project-head"><h3>AcceSnake</h3><span class="year">2009</span></div>
+          <p>Accelerometer-controlled Snake for the Nokia N95: tilt to steer. Grew to 200,000+ downloads in its heyday.</p>
+          <div class="project-tags"><span class="tag">Python</span><span class="tag">Symbian</span><span class="tag">Open source</span></div>
+          <div class="project-links">
+            <a href="{{ accesnake_post.url | prepend: site.baseurl }}">The story →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-media project-media--emoji" aria-hidden="true">📡</div>
+        <div class="project-body">
+          <div class="project-head"><h3>MultiShare</h3><span class="year">2016</span></div>
+          <p>Share information across Android devices on the same network using Network Service Discovery and pseudo-intents.</p>
+          <div class="project-tags"><span class="tag">Android</span><span class="tag">NSD</span><span class="tag">Java</span></div>
+          <div class="project-links">
+            <a href="https://github.com/{{ site.github_username }}/MultiShare" target="_blank" rel="noopener">GitHub →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-media project-media--emoji" aria-hidden="true">❓</div>
+        <div class="project-body">
+          <div class="project-head"><h3>CmoaQuiz</h3><span class="year">·</span></div>
+          <p>A customizable Android quiz game. Pick your categories, set the rules, and play.</p>
+          <div class="project-tags"><span class="tag">Android</span><span class="tag">Java</span></div>
+          <div class="project-links">
+            <a href="https://github.com/{{ site.github_username }}/CmoaQuiz" target="_blank" rel="noopener">GitHub →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-media project-media--emoji" aria-hidden="true">⭐</div>
+        <div class="project-body">
+          <div class="project-head"><h3>More on GitHub</h3><span class="year">19+ repos</span></div>
+          <p>Libraries, experiments and conference projects, from sliding menus to AndroidMakers tooling.</p>
+          <div class="project-tags"><span class="tag">Open source</span></div>
+          <div class="project-links">
+            <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">Browse all →</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ====================== WRITING ====================== -->
+<section class="section" id="writing">
+  <div class="wrapper">
+    <div class="section-head reveal">
+      <span class="eyebrow">Writing &amp; talks</span>
+      <h2>Sharing what I learn</h2>
+      <p>Engineering notes from Qonto and the Android platform, plus what's coming next.</p>
+    </div>
+
+    <div class="list-rows reveal">
+      <a class="list-row" href="https://medium.com/qonto-engineering/you-can-fix-the-0-1-a1f8b2511605" target="_blank" rel="noopener">
+        <span class="row-main">
+          <span class="row-title">You can fix the 0.1%</span>
+          <span class="row-sub">The Qonto Way · Medium · caring about every single user</span>
+        </span>
+        <span class="row-arrow">↗</span>
+      </a>
+
+      <a class="list-row" href="https://medium.com/@{{ site.medium_username }}/how-aosp-creates-incompatibilities-fe8faeb26a41" target="_blank" rel="noopener">
+        <span class="row-main">
+          <span class="row-title">How AOSP creates incompatibilities</span>
+          <span class="row-sub">Medium · a deep dive into Android platform quirks</span>
+        </span>
+        <span class="row-arrow">↗</span>
+      </a>
+
+      <div class="list-row is-soon">
+        <span class="row-main">
+          <span class="row-title">Migrating 100+ XML screens to Jetpack Compose</span>
+          <span class="row-sub">In progress · lessons from modernising a large codebase</span>
+        </span>
+        <span class="row-arrow">soon</span>
+      </div>
+    </div>
+
+    {% if site.posts.size > 0 %}
+    <h3 style="margin-top: 2.4rem;">From the archive</h3>
+    <ul class="post-list reveal">
+      {% for post in site.posts %}
+        <li>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+          <h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+        </li>
+      {% endfor %}
+    </ul>
+    <p class="rss-subscribe">Subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+    {% endif %}
+
+    <div class="chips reveal">
+      <span class="chip">🎤 Droidcon Paris</span>
+      <span class="chip">🤖 AndroidMakers</span>
+      <span class="chip">👥 Paris Android User Group</span>
+    </div>
+  </div>
+</section>

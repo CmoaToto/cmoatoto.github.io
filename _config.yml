@@ -1,12 +1,24 @@
 # Site settings
-title: CmoaToto (dot) com
+title: Antonin Fouques
+author: Antonin Fouques
+role: Android Staff Engineer @ Qonto
+tagline: >
+    Android Staff Engineer crafting banking apps for SMEs & freelancers,
+    pushing AI in the Android team, after a decade growing the Paris Android community.
+description: >
+    Antonin Fouques, Android Staff Engineer at Qonto. Compose, AI for Android,
+    and a decade of community work across PAUG, Droidcon Paris and AndroidMakers.
+location: Paris, France
+
+# Profiles
 email: antonin.fouques@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
-    CmoaToto's new world
+github_username: CmoaToto
+bluesky_username: cmoatoto.bsky.social  # TODO: confirm your exact Bluesky handle
+linkedin_username: antoninfouques
+medium_username: totofouques
+
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://cmoatoto.com" # the base hostname & protocol for your site
-twitter_username: CmoaToto
-github_username:  CmoaToto
+url: "https://cmoatoto.com" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
